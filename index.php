@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php
+$metaTitle = 'Accueil';
+$metaDescription = 'Ceci est une super description';
+include 'header.php';
+
+?>
 
         <p>Actuellement en formation de <em>'Développeur Web et Applications' </em> à Valence(26) dans le cadre d'une reconversion.</p>
             <p>Je cherche une <strong>équipe extraordinaire</strong>, au sein d'une <strong> entreprise toppissime </strong>,
