@@ -9,7 +9,7 @@ include 'header.php';
             <p>Je cherche une <strong>équipe extraordinaire</strong>, au sein d'une <strong> entreprise toppissime </strong>,
             qui me permettrait de compléter ma formation de développeur tout en y apportant mon expérience .</p>
 
-        <p> En effet, j'ai 20 ans d'expérience majoritairement dans le secteur automobile, dans les services après - vente, et également dans l'utilisation, installation de progiciels de gestion (DMS) dédiés au secteur automobile.</p>
+        <p> En effet, j'ai 20 ans d'expérience majoritairement dans le secteur automobile, dans les services après-vente, et également dans l'utilisation, installation de progiciels de gestion (DMS) dédiés au secteur automobile.</p>
 
         <section class='backgroundXp'>
 
@@ -50,7 +50,7 @@ include 'header.php';
                         </tr>
                         <tr>
                             <td>1998 - 2000</td>
-                            <td>Internship in banks (Caixe Geral de Depositos & Banque Directe)</td>
+                            <td>Internship in banks (Caixa Geral de Depositos & Banque Directe)</td>
                         </tr>
                         <tr>
                             <td>1997 - 1998</td>
@@ -112,7 +112,7 @@ include 'header.php';
             <div class='numList'>
                 <h3> Section Hobbies </h3>
                 <ol>
-                    <li> Low-riders cars <a href='hobby.html'> (details here)</a> & Driving sports cars</li>
+                    <li> Low-riders cars <a href='./hobby.php'> (details here)</a> & Driving sports cars</li>
                     <li> Football (soccer) - Badminton - Padel</li>
                     <li> New technologies</li>
                     <li> Parents School association</li>
