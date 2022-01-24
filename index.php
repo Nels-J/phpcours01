@@ -21,7 +21,7 @@ include 'header.php';
                     <tbody>
                         <tr>
                             <td> 2012 - 2021 </td>
-                            <td> Product Owner - Business Analyst - Market Stategist at Keyloop (formerly know as CDK
+                            <td> Product Owner - Business Analyst - Market Strategist at Keyloop (formerly know as CDK
                                 Globlal) </td>
                         </tr>
                         <tr>
