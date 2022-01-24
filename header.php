@@ -18,9 +18,7 @@
             <img id='profilePicture' src='./img/profil_beach.png' alt='my profil picture'>
         </header>
 <nav>
-    <ul>
-        <li><a href='index.php?page=contact'> Contact me </a></li>
-        <li><a href='index.php?page=resume'> My Resume </a></li>
-        <li><a href='index.php?page=hobby'> My Hobbies </a></li>
-    </ul>
+    <a href=index.php?page=contact> Contact me </a>
+    <a href=index.php?page=resume> My Resume </a>
+    <a href=index.php?page=hobby> My Hobbies </a>
 </nav>
