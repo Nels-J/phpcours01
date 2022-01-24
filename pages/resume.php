@@ -1,7 +1,6 @@
 <?php
 $metaTitle = 'Resume';
 $metaDescription = 'You will know all you need to know about my professional background here';
-include 'header.php';
 ?>
 
 <p>Actuellement en formation de <em>'Développeur Web et Applications' </em> à Valence(26) dans le cadre d'une reconversion.</p>
@@ -111,7 +110,7 @@ include 'header.php';
     <div class='numList'>
         <h3> Section Hobbies </h3>
         <ol>
-            <li> Low-riders cars <a href='pages/hobby.php'> (details here)</a> & Driving sports cars</li>
+            <li> Low-riders cars <a href='hobby.php'> (details here)</a> & Driving sports cars</li>
             <li> Football (soccer) - Badminton - Padel</li>
             <li> New technologies</li>
             <li> Parents School association</li>
@@ -119,5 +118,3 @@ include 'header.php';
     </div>
 
 </section>
-
-<?php include 'footer.php'; ?>

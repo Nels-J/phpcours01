@@ -1,7 +1,6 @@
 <?php
 $metaTitle = 'Formulaire de contact';
 $metaDescription = 'Ceci est un super top formulaire de contact';
-include 'header.php';
 ?>
 
             <h3> Please feel free to email me filling the form bellow: </h3>
@@ -64,6 +63,3 @@ include 'header.php';
                         </p>
 
             </form>
-
-
-<?php include 'footer.php'; ?>

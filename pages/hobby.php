@@ -1,7 +1,6 @@
 <?php
 $metaTitle = 'Hobbies';
 $metaDescription = 'An amazing page about my hobbies';
-include 'header.php';
 ?>
 
         <section>
@@ -24,6 +23,3 @@ include 'header.php';
             <a href="https://www.caterhamcars.com/en">Official Caterham Cars website</a>
             <a href="https://westfield-sportscars.co.uk/">Official Westfield website</a>
         </section>
-
-
-<?php include 'footer.php'; ?>
