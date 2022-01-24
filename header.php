@@ -14,7 +14,13 @@
         <header>
                 <h1> Nelson JESUS </h1>
                 <h2> Junior Web Developer </h2>
-                <a href='pages/contact.php'> Contact me </a>
-            </div>
+    </div>
             <img id='profilePicture' src='./img/profil_beach.png' alt='my profil picture'>
         </header>
+<nav>
+    <ul>
+        <li><a href='index.php?page=contact'> Contact me </a></li>
+        <li><a href='index.php?page=resume'> My Resume </a></li>
+        <li><a href='index.php?page=hobby'> My Hobbies </a></li>
+    </ul>
+</nav>
