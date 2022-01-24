@@ -12,7 +12,6 @@
 <body>
     <div class='main'>
         <header>
-            <div>
                 <h1> Nelson JESUS </h1>
                 <h2> Junior Web Developer </h2>
                 <a href='contact.html'> Contact me </a>
