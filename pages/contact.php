@@ -1,6 +1,16 @@
 <?php
 $metaTitle = 'Formulaire de contact';
 $metaDescription = 'Ceci est un super top formulaire de contact';
+$gender = filter_input(INPUT_POST, 'gender');
+$surName = filter_input(INPUT_POST, 'surName');
+$firstName = filter_input(INPUT_POST, 'firstName');
+$phone = filter_input(INPUT_POST, 'phone');
+$email = filter_input(INPUT_POST, 'email');
+$subject = filter_input(INPUT_POST, 'subject');
+$comments = filter_input(INPUT_POST, 'comments');
+$requestTimestamp = date('Y-m-d-H-i-s');
+$createContactFile = file_put_contents("contact_$requestTimestamp.txt","$gender,$firstName,$surName,$phone,$email,$subject,$comments\n\r");
+//TODO data output of $createContactFile to review
 ?>
 
             <h3> Please feel free to email me filling the form bellow: </h3>
@@ -13,7 +23,7 @@ $metaDescription = 'Ceci est un super top formulaire de contact';
                     <p>
                         <label for="gender-select">Gender:</label>
 
-                        <select name="genders" id="gender-select">
+                        <select name="gender" id="gender-select">
 
                             <option value="">--Please choose an option--</option>
                             <option value="Man">Man</option>
