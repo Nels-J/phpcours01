@@ -3,19 +3,23 @@
 $metaTitle = 'Formulaire de contact';
 $metaDescription = 'Ceci est un super top formulaire de contact';
 
-//Formulaire est-il soumis
-$submitted = filter_has_var(INPUT_POST, 'submit');
-
 //Data Form Fields Management
 $gender = filter_input(INPUT_POST, 'gender');
 $surName = filter_input(INPUT_POST, 'surName');
 $firstName = filter_input(INPUT_POST, 'firstName');
 $phone = filter_input(INPUT_POST, 'phone');
 $email = filter_input(INPUT_POST, 'email');
+//fixme SI aucun bouton radio saisi ET SI soumis afficher message d'erreurs
 $subject = filter_input(INPUT_POST, 'subject');
 $comments = filter_input(INPUT_POST, 'comments');
+
+//Form is it submitted ?
+$submitted = filter_has_var(INPUT_POST, 'submit');
+
+//fixme SI le formulaire est entierement rempli ALORS executer la création du fichier
+//File output build
 $requestTimestamp = date('Y-m-d-H-i-s');
-$createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender,$firstName,$surName,$phone,$email,$subject,$comments\n\r");
+$createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt", "$gender,$firstName,$surName,$phone,$email,$subject,$comments\n\r");
 
 ?>
 
@@ -40,7 +44,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
 
         </p>
         <?php
-        if (empty($gender) && ($submitted==true)) {
+        if (empty($gender) && ($submitted)) {
             echo 'Is required, blank not allowed';
         }
         ?>
@@ -48,7 +52,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
             <label>Your Surname: <input name="surName"></label>
         </p>
         <?php
-        if (empty($surName) && ($submitted==true)) {
+        if (empty($surName) && ($submitted)) {
             //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
             echo 'Is required, blank not allowed';
         }
@@ -57,7 +61,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
             <label>Your Firstname: <input name="firstName"></label>
         </p>
         <?php
-        if (empty($firstName) && ($submitted==true)) {
+        if (empty($firstName) && ($submitted)) {
             //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
             echo 'Is required, blank not allowed';
         }
@@ -66,7 +70,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
             <label>Phone: <input type=tel name="phone"></label>
         </p>
         <?php
-        if (empty($phone) && ($submitted==true)) {
+        if (empty($phone) && ($submitted)) {
             echo 'Is required, blank not allowed';
             //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
         }
@@ -75,7 +79,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
             <label>Your Mail: <input type=email name="email"></label>
         </p>
         <?php
-        if (empty($email) && ($submitted==true)) {
+        if (empty($email) && ($submitted)) {
             //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
             echo 'Is required, blank not allowed';
         }
@@ -99,7 +103,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
             <label> <input type="radio" name="subject" value="Other"> Other </label>
         </p>
         <?php
-        if (empty($subject) && ($submitted==true)) {
+        if (!isset($subject) && $submitted) { // todo isset Vs. empty still unclear.
             echo 'Is required, blank not allowed';
         }
         ?>
@@ -110,7 +114,7 @@ $createContactFile = file_put_contents("contact_$requestTimestamp.txt", "$gender
         <label> Tell me: <textarea name="comments"></textarea></label>
     </p>
     <?php
-    if (empty($comments) && ($submitted==true)) {
+    if (empty($comments) && $submitted) {
         echo 'Is required, blank not allowed';
     }
     ?>
