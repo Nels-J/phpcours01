@@ -9,18 +9,22 @@ $surName = filter_input(INPUT_POST, 'surName');
 $firstName = filter_input(INPUT_POST, 'firstName');
 $phone = filter_input(INPUT_POST, 'phone');
 $email = filter_input(INPUT_POST, 'email');
-//fixme SI aucun bouton radio saisi ET SI soumis afficher message d'erreurs
 $subject = filter_input(INPUT_POST, 'subject');
 $comments = filter_input(INPUT_POST, 'comments');
 
-//Form is it submitted ?
+//Did the User has submitted is form ?
 $submitted = filter_has_var(INPUT_POST, 'submit');
 
-//fixme SI le formulaire est entierement rempli ALORS executer la création du fichier
-//File output build
-$requestTimestamp = date('Y-m-d-H-i-s');
-$createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt", "$gender,$firstName,$surName,$phone,$email,$subject,$comments\n\r");
+//Did the required fields are filled ?
+$formFullyFilled = !empty($gender) && !empty($surName) && !empty($firstName) && !empty($phone) && !empty($email) && isset($subject) && !empty($comments);
 
+//Did the conditions required are evaluated to run the file creation output ?
+if ($submitted && $formFullyFilled) {
+//File output build
+    $requestTimestamp = date('Y-m-d-H-i-s');
+    $createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt", "$gender,$firstName,$surName,$phone,$email,$subject,$comments\n\r");
+    echo 'form sent';
+}
 ?>
 
 <h3> Please feel free to email me filling the form bellow: </h3>
@@ -53,7 +57,6 @@ $createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt",
         </p>
         <?php
         if (empty($surName) && ($submitted)) {
-            //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
             echo 'Is required, blank not allowed';
         }
         ?>
@@ -62,7 +65,6 @@ $createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt",
         </p>
         <?php
         if (empty($firstName) && ($submitted)) {
-            //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
             echo 'Is required, blank not allowed';
         }
         ?>
@@ -72,7 +74,6 @@ $createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt",
         <?php
         if (empty($phone) && ($submitted)) {
             echo 'Is required, blank not allowed';
-            //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
         }
         ?>
         <p>
@@ -80,7 +81,6 @@ $createContactFile = file_put_contents("contacts/contact_$requestTimestamp.txt",
         </p>
         <?php
         if (empty($email) && ($submitted)) {
-            //todo how to replace $var for each echo by the name field echo ('$var is either 0, empty, or not set at all';)
             echo 'Is required, blank not allowed';
         }
         ?>
